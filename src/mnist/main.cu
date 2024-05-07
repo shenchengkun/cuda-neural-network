@@ -7,6 +7,7 @@
 #define EPOCHS 30
 #define BETA 0.99
 
+// test
 int main() {
   // DataSet dataset("./mnist_data", true);
   // dataset.forward(64, true);
