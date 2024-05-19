@@ -7,6 +7,9 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <thrust/host_vector.h>
+using mr = thrust::system::cuda::universal_host_pinned_memory_resource;
+using pinned_allocator = thrust::mr::stateless_resource_allocator<float, mr>;
 
 class DataSet : public Layer {
  public:

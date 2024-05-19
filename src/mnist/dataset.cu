@@ -1,7 +1,7 @@
 ﻿#include <dataset.cuh>
 #include <utils.cuh>
 
-#include <thrust/system/cuda/experimental/pinned_allocator.h>
+// #include <thrust/system/cuda/experimental/pinned_allocator.h>
 
 #include <algorithm>
 #include <chrono>
@@ -59,7 +59,7 @@ void DataSet::forward(int batch_size, bool is_train) {
     int one_hot_stride = 10;
 
     thrust::host_vector<
-        float, thrust::system::cuda::experimental::pinned_allocator<float>>
+        float, pinned_allocator>
         train_data_buffer;
     train_data_buffer.reserve(size * im_stride);
 
@@ -92,7 +92,7 @@ void DataSet::forward(int batch_size, bool is_train) {
     int one_hot_stride = 10;
 
     thrust::host_vector<
-        float, thrust::system::cuda::experimental::pinned_allocator<float>>
+        float, pinned_allocator>
         test_data_buffer;
     test_data_buffer.reserve(size * im_stride);
 
