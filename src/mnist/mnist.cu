@@ -5,15 +5,15 @@ Minist::Minist(std::string minst_data_path, float learning_rate, float l2,
   // init
   dataset.reset(new DataSet(minst_data_path, true));
 
-  conv1.reset(new Conv(28, 28, 1, 32, 5, 5, 0, 0, 1, 1, true));
+  conv1.reset(new Conv(28, 28, 1, 16, 5, 5, 0, 0, 1, 1, true));
   conv1_relu.reset(new ReLU(true));
   max_pool1.reset(new MaxPool(2, 2, 0, 0, 2, 2));
 
-  conv2.reset(new Conv(12, 12, 32, 64, 5, 5, 0, 0, 1, 1, true));
+  conv2.reset(new Conv(12, 12, 16, 32, 5, 5, 0, 0, 1, 1, true));
   conv2_relu.reset(new ReLU(true));
   max_pool2.reset(new MaxPool(2, 2, 0, 0, 2, 2));
 
-  conv3.reset(new Conv(4, 4, 64, 128, 3, 3, 0, 0, 1, 1, true));
+  conv3.reset(new Conv(4, 4, 32, 128, 3, 3, 0, 0, 1, 1, true));
   conv3_relu.reset(new ReLU(true));
 
   flatten.reset(new Flatten(true));
